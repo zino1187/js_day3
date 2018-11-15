@@ -31,11 +31,32 @@
 }
 </style>
 <script>
+//전역변수는 코드의 제일 상단에 선언한다..
+//이유? 중간 중간에 전역변수가 있을 경우, 코드 분석에 앞서
+//변수 찾는 일이 되버린다...
 var r=0; //각도를 누적할 전역변수
+var op=1; //투명도를 제어할 전역변수
+
 //문서내에 hero라는 아이디의 스타일의 rotate 속성값을 양수값을 적용하여 돌리기
 function rotate1(){
-	document.getElementById("hero").style.transform="rotate(0deg)";	
+	r+=10; // r=r+10;
+	//r++; //1씩
+	document.getElementById("hero").style.transform="rotate("+r+"deg)";	
 }
+function rotate2(){
+	r-=10; // r=r+10;
+	//r++; //1씩
+	document.getElementById("hero").style.transform="rotate("+r+"deg)";	
+}
+function opacity1(){//불투명하게
+	op+=0.1; //op = op+0.1;
+	document.getElementById("hero").style.opacity=op;	
+}
+function opacity2(){ //투명하게
+	op-=0.1; //op = op-0.1;
+	document.getElementById("hero").style.opacity=op;	
+}
+
 </script>
 </head>
 <body>
@@ -46,8 +67,8 @@ function rotate1(){
 			<img src="../res/minus_btn.png" width="50px" onClick="rotate2()"/>
 
 			<h3>투명도</h3>
-			<img src="../res/plus_btn.png" width="50px"/>
-			<img src="../res/minus_btn.png" width="50px"/>
+			<img src="../res/plus_btn.png" width="50px" onClick="opacity1()"/>
+			<img src="../res/minus_btn.png" width="50px" onClick="opacity2()"/>
 		</div>
 		<div id="content">
 			<img src="../res/warior.png" width="400px" id="hero"/>
