@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>여전사 변형하기</title>
+<style>
+#wrapper{
+	width:954px;
+	height:604px;
+	border:2px solid blue;
+	margin:auto; /*현재 div가 차지하고 있는 공간외의 남은 공간을
+	양분해서 알아서 분할한다..따라서 중앙으로 오게됨..*/
+}
+#control{
+	width:150px;
+	height:100%;
+	border:2px solid red;
+	/*현재 static 속성이 적용되었기 때문에 다른 요소가 올라오지 못하고있다
+	따라서 ,올라오게 하려면, 현재 태그 요소를 공중으로 띄우자!!*/
+	float:left;
+}
+#content{
+	width:800px;
+	height:100%;
+	background-image:url("../res/universe.jpg");
+	float:left;
+	text-align:center;
+}
+#hero{
+	transform:rotate(0deg);
+}
+</style>
+<script>
+var r=0; //각도를 누적할 전역변수
+//문서내에 hero라는 아이디의 스타일의 rotate 속성값을 양수값을 적용하여 돌리기
+function rotate1(){
+	document.getElementById("hero").style.transform="rotate(0deg)";	
+}
+</script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="control">
+			<h3>회전</h3>
+			<img src="../res/plus_btn.png" width="50px" onClick="rotate1()"/>
+			<img src="../res/minus_btn.png" width="50px" onClick="rotate2()"/>
+
+			<h3>투명도</h3>
+			<img src="../res/plus_btn.png" width="50px"/>
+			<img src="../res/minus_btn.png" width="50px"/>
+		</div>
+		<div id="content">
+			<img src="../res/warior.png" width="400px" id="hero"/>
+		</div>
+	</div>
+</body>
+</html>
