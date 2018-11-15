@@ -25,6 +25,10 @@ function create(){
 	div.style.width=100+"px";
 	div.style.height=100+"px";
 	div.style.background="blue";
+	//div는 block 속성을 가지므로, 아무리 공간이 남아도 그 어떠한 요소
+	//공존을 허락하지 않는다..해결책?? 띄운다!!
+	div.style.float="left";
+	div.style.borderRadius=50+"px";
 
 	//메모리에 생성되기만 했으므로, 화면에 부착하자!!
 	//문서내에 wrapper라 불리는 id요소에 div를 자식으로 부착하자!
