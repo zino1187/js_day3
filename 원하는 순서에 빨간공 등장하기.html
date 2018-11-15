@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>원하는 순서에 빨간공 등장하기</title>
+<style>
+body{
+	margin:0px; /*body와 그 안쪽에 있는 물체와의 마진을 없애기*/
+}
+#wrapper{
+	width:100%;
+	height:600px; /*높이는 부모가 있을때만 %퍼센트가 적용됨..*/
+	background:yellow;
+	 /*
+	 border-radius:300px;
+	 너비의 절반을 radius에 할당하면									정원이 만들어진다 !!*/
+}
+</style>
+<script>
+//클릭할때마다, wapper라는 아이디 안에 원을 추가하자
+function create(){
+	//프로그래밍적으로 태그 요소를 생성할 수도 있다!!
+	var div=document.createElement("div");	
+	//방금 생성한 div에 디자인적 효과를 style로 부여하자!!
+	div.style.width=100+"px";
+	div.style.height=100+"px";
+	div.style.background="blue";
+
+	//메모리에 생성되기만 했으므로, 화면에 부착하자!!
+	//문서내에 wrapper라 불리는 id요소에 div를 자식으로 부착하자!
+	var wrapper=document.getElementById("wrapper");
+	wrapper.appendChild(div);
+}
+</script>
+</head>
+<body onClick="create()">
+	<div id="wrapper"></div>
+</body>
+</html>
