@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>다트 효과</title>
+<style>
+#wrapper{
+	width:100%;
+	height:600px;
+	background:yellow;
+}
+</style>
+<script>
+function getPos(){
+	//마우스의 실시간 좌표 구하기!! (x,y)
+	var x=event.clientX; //마우스의 x좌표 
+	var y=event.clientY; //마우스의 y좌표 
+
+	//console.log(x,y);
+	//문서내에 data라 불리는 요소의 사이에 문자열 넣기!!
+	var data=document.getElementById("data");
+	data.innerText="x축:"+x+"px  y축:"+y+"px";
+}	
+</script>
+</head>
+<body onMouseMove="getPos()">
+	<div id="wrapper"></div>
+	<h1 id="data">x축:  ,  y축: </h1>
+</body>
+</html>
